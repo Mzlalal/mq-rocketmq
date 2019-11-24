@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RocketMQMessageListener(topic = "over-bus", consumerGroup = "user-information")
-public class UserConsumer implements RocketMQListener<UserDTO> {
+public class UserConsumer2 implements RocketMQListener<UserDTO> {
     @Override
     public void onMessage(UserDTO message) {
-        log.info("UserConsumer over-bus user-information: {}", message);
+        log.info("UserConsumer2 over-bus user-information 收到用户信息: {}", message);
     }
 }

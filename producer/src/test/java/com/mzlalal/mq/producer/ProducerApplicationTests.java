@@ -2,7 +2,6 @@ package com.mzlalal.mq.producer;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -13,16 +12,15 @@ public class ProducerApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		RestTemplate restTemplate = new RestTemplate();
+		// 测试连接
 		for (int i = 0; i < 100; i++) {
 			StringBuffer sb = new StringBuffer();
-			sb.append("http://localhost:8091/test/testProducer?age="+i);
+			sb.append("http://localhost:8091/test/testProducer?age="+i+"&username=no"+i);
 			try {
 				URL url = new URL(sb.toString());
 				HttpURLConnection conn = (HttpURLConnection)url.openConnection();
                 conn.connect();
                 conn.getInputStream();
-                System.out.println(i);
                 conn.disconnect();
 			} catch (IOException e) {
 				e.printStackTrace();

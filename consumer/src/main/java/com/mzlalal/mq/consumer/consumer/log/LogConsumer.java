@@ -1,4 +1,4 @@
-package com.mzlalal.mq.consumer.consumer;
+package com.mzlalal.mq.consumer.consumer.log;
 
 import com.mzlalal.mq.api.entity.dto.user.UserDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -8,17 +8,17 @@ import org.springframework.stereotype.Service;
 
 /**
  * @description:
- * 主题 消费分组在同样的情况下不会重复消费 而为负载均衡
+ * 记录用户行程日志
  * @author: Mzlalal
- * @date: 2019/11/23 21:16
+ * @date: 2019/11/24 18:37
  * @version: 1.0
  */
 @Slf4j
 @Service
-@RocketMQMessageListener(topic = "over-bus", consumerGroup = "user-information")
-public class UserConsumer implements RocketMQListener<UserDTO> {
+@RocketMQMessageListener(topic = "over-bus", consumerGroup = "log")
+public class LogConsumer implements RocketMQListener<UserDTO> {
     @Override
     public void onMessage(UserDTO message) {
-        log.info("UserConsumer over-bus user-information: {}", message);
+        log.info("LogConsumer over-bus log 收到信息开始记录日志: {}", message);
     }
 }
