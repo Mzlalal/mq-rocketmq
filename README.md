@@ -4,7 +4,6 @@ rocketmq简单集成
 1. API 为公共实体以及服务
 2. PRODUCER 为生产者
 3. CONSUMER 为消费者
-<br/>
 ### 发送消息
 配置rocketmq nameserver地址
 ``` java
