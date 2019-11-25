@@ -1,18 +1,20 @@
 rocketmq简单集成
+<br/>
 ### 目录结构
 1. API 为公共实体以及服务
 2. PRODUCER 为生产者
 3. CONSUMER 为消费者
-### 发送消息
+### 连接rocketmq
 配置rocketmq nameserver地址
 ``` java
 # 生产者分组
 rocketmq.producer.group=mzlalal-mq
 # rocket name server服务器地址
 rocketmq.name-server=127.0.0.1:9876
-
-// 使用RocketMQTemplate进行消息发送
-
+```
+### 发送消息
+使用RocketMQTemplate进行消息发送
+``` java
 // 注入
 @Autowired
 private RocketMQTemplate rocketMQTemplate;
