@@ -15,11 +15,15 @@ rocketmq.name-server=127.0.0.1:9876
 ### 发送消息
 使用RocketMQTemplate进行消息发送
 ``` java
-// 注入
+/**
+ * 注入
+ */
 @Autowired
 private RocketMQTemplate rocketMQTemplate;
 
-// 发送消息
+/**
+ * 发送消息
+ */
 rocketMQTemplate.convertAndSend("topic", yourObject);
 ```
 ### 接收消息
