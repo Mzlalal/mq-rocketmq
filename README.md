@@ -5,7 +5,7 @@ rocketmq简单集成
 3. CONSUMER 为消费者
 ### 发送消息
 配置rocketmq nameserver地址
-```java
+``` java
 # 生产者分组
 rocketmq.producer.group=mzlalal-mq
 # rocket name server服务器地址
