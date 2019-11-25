@@ -11,9 +11,9 @@ rocketmq简单集成
 rocketmq.producer.group=mzlalal-mq
 # rocket name server服务器地址
 rocketmq.name-server=127.0.0.1:9876
-```
-使用RocketMQTemplate进行消息发送
-``` java
+
+// 使用RocketMQTemplate进行消息发送
+
 // 注入
 @Autowired
 private RocketMQTemplate rocketMQTemplate;
